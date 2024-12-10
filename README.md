@@ -17,17 +17,16 @@ ROI-based augmentations contains a single `augment.py` file used for augmenting 
 It outputs to a file named `result.png` in the current folder.
 
 ## SAM2 Segmentation  
+This section includes two key scripts:  
 
-This repository contains two key components for performing segmentation using the Segment Anything Model 2 (SAM2):
+#### 1. **`Sam2_image_predictor.py`: generates binary segmentation masks for regions of interest using the point-prompting technique (input points and labels). It combines functionality from the SAM2 notebooks: `image_predictor_example.ipynb` and `automatic_mask_generator_example.ipynb`.  
 
-### 1. **`Sam2_image_predictor.py`**  
-This script is adapted from the Segment Anything Model (SAM2) and is designed to generate binary segmentation masks for regions of interest using the point-prompting technique (input points and labels). It combines functionality from the SAM2 notebooks: `image_predictor_example.ipynb` and `automatic_mask_generator_example.ipynb`.  
-
-#### Requirements:  
+##### Requirements:  
 - A CUDA-enabled GPU.  
 - SAM2 installed (follow the instructions in the [SAM2 GitHub repository](https://github.com/facebookresearch/sam2)).  
+ 
 
-#### Usage:  
+##### Usage:  
 To run the script, you will need:  
 - The SAM2 model checkpoint file: `sam2_hiera_large.pt`.  
 - The configuration file: `sam2_hiera_l.yaml`.  
@@ -38,17 +37,13 @@ Run the script from the terminal using the following command:
 ```bash
 python sam2_image_predictor.py
 ```
+#### 2. **`Analyze_mask.py`: Evaluates segmentation results by comparing ground truth masks and SAM2 predictions. It calculates performance metrics, such as the Dice Similarity Coefficient (DSC) and Intersection over Union (IoU).  
 
----
-
-### 2. **`Analyze_mask.py`**  
-This script is used for analyzing ground truth masks and SAM2 predictions. It calculates performance metrics, such as the Dice Similarity Coefficient (DSC) and Intersection over Union (IoU).  
-
-#### Features:  
+##### Features:  
 - Does not require a GPU.  
 - Can be run locally on your computer.  
 
-#### Usage:  
+##### Usage:  
 Run the script from the terminal using the following command:  
 ```bash
 python analyze_mask.py
