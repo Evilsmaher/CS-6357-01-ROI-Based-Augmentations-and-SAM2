@@ -19,7 +19,7 @@ It outputs to a file named `result.png` in the current folder.
 ## SAM2 Segmentation  
 This section includes two key scripts:  
 
-#### 1. **`Sam2_image_predictor.py`: generates binary segmentation masks for regions of interest using the point-prompting technique (input points and labels). It combines functionality from the SAM2 notebooks: `image_predictor_example.ipynb` and `automatic_mask_generator_example.ipynb`.  
+1. `Sam2_image_predictor.py`: generates binary segmentation masks for regions of interest using the point-prompting technique (input points and labels). It combines functionality from the SAM2 notebooks: `image_predictor_example.ipynb` and `automatic_mask_generator_example.ipynb`.  
 
 ##### Requirements:  
 - A CUDA-enabled GPU.  
@@ -37,7 +37,7 @@ Run the script from the terminal using the following command:
 ```bash
 python sam2_image_predictor.py
 ```
-#### 2. **`Analyze_mask.py`: Evaluates segmentation results by comparing ground truth masks and SAM2 predictions. It calculates performance metrics, such as the Dice Similarity Coefficient (DSC) and Intersection over Union (IoU).  
+2. Analyze_mask.py`: Evaluates segmentation results by comparing ground truth masks and SAM2 predictions. It calculates performance metrics, such as the Dice Similarity Coefficient (DSC) and Intersection over Union (IoU).  
 
 ##### Features:  
 - Does not require a GPU.  
