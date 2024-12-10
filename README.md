@@ -10,7 +10,11 @@ Let me preface by saying **I cannot share the data** so you will not be able to 
 
 ## ROI-Based Augmentations
 
+ROI-based augmentations contains a single `augment.py` file used for augmenting a single image. It takes in a single binary image and an original image then executes pixel-by-pixel augmentations and outputs a combined image.
 
+`augment.py <binary_mark> <original_image>`
+
+It outputs to a file named `result.png` in the current folder.
 
 ## SAM2 Segmentation
 
